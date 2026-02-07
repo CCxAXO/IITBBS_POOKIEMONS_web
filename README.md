@@ -1,10 +1,10 @@
-#project:
+# project:
   name: Cosmic Watch
   description: Real time asteroid monitoring and risk analysis platform using NASA data
   purpose: Show near earth objects in a simple and visual way
   type: Full stack hackathon project
 
-features:
+# features:
   - Live asteroid data from NASA NeoWs API
   - Risk classification into HIGH MEDIUM and LOW
   - Distance and velocity tracking
@@ -12,13 +12,13 @@ features:
   - Interactive dashboard with stats and cards
   - Space themed dark user interface
 
-risk_logic:
+# risk_logic:
   high: Hazardous asteroid and distance less than 1000000 km
   medium: Distance less than 3000000 km
   low: All other asteroids
 
-tech_stack:
-  frontend:
+# tech stack:
+  #### frontend:
     framework: React
     language: TypeScript
     build_tool: Vite
@@ -36,7 +36,7 @@ tech_stack:
     - GitHub
     - Postman
 
-api:
+# api:
   base_url: http://localhost:5000
   endpoint: /api/asteroids/feed
   method: GET
@@ -48,7 +48,7 @@ api:
     - hazardous
     - risk
 
-project_structure:
+# project structure:
   backend:
     - src/index.js
     - src/routes/asteroids.js
@@ -79,7 +79,7 @@ setup:
     - UI scaffolding
     - Documentation support
 
-author:
+# author:
   name: Pookiemons
   field: Computer Science AI and ML
   year: 2026
