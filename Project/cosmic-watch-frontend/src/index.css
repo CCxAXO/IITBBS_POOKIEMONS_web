@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Cosmic Dark Theme */
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 95% 50%;
+    --primary-foreground: 230 25% 7%;
+
+    --secondary: 230 20% 15%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 230 20% 18%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 270 60% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 20% 18%;
+    --input: 230 20% 15%;
+    --ring: 190 95% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Cosmic Colors */
+    --cosmic-cyan: 190 95% 50%;
+    --cosmic-purple: 270 60% 55%;
+    --cosmic-amber: 38 92% 50%;
+    --cosmic-red: 0 72% 51%;
+    --cosmic-green: 160 70% 45%;
+    
+    /* Risk Level Colors */
+    --risk-high: 0 72% 51%;
+    --risk-medium: 38 92% 50%;
+    --risk-low: 160 70% 45%;
+
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(230 25% 7%) 0%, hsl(260 30% 12%) 50%, hsl(230 25% 7%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(230 25% 12%) 0%, hsl(230 25% 8%) 100%);
+    --gradient-glow: linear-gradient(180deg, hsl(190 95% 50% / 0.15) 0%, transparent 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px -10px hsl(190 95% 50% / 0.3);
+    --shadow-card: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 230 25% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 190 95% 50%;
+    --sidebar-primary-foreground: 230 25% 7%;
+    --sidebar-accent: 230 20% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 20% 18%;
+    --sidebar-ring: 190 95% 50%;
+  }
+
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-cosmic);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .cosmic-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .cosmic-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .text-gradient-cosmic {
+    background: linear-gradient(135deg, hsl(var(--cosmic-cyan)) 0%, hsl(var(--cosmic-purple)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .risk-high {
+    background: hsl(var(--risk-high) / 0.15);
+    color: hsl(var(--risk-high));
+    border: 1px solid hsl(var(--risk-high) / 0.3);
+  }
+
+  .risk-medium {
+    background: hsl(var(--risk-medium) / 0.15);
+    color: hsl(var(--risk-medium));
+    border: 1px solid hsl(var(--risk-medium) / 0.3);
+  }
+
+  .risk-low {
+    background: hsl(var(--risk-low) / 0.15);
+    color: hsl(var(--risk-low));
+    border: 1px solid hsl(var(--risk-low) / 0.3);
+  }
+
+  .star-field {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--cosmic-cyan) / 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--foreground) / 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--cosmic-purple) / 0.3), transparent),
+      radial-gradient(2px 2px at 160px 120px, hsl(var(--cosmic-cyan) / 0.2), transparent),
+      radial-gradient(1px 1px at 230px 80px, hsl(var(--foreground) / 0.15), transparent),
+      radial-gradient(2px 2px at 300px 150px, hsl(var(--cosmic-purple) / 0.2), transparent);
+    background-size: 350px 200px;
+    animation: twinkle 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px -5px hsl(var(--cosmic-cyan) / 0.4); }
+    50% { box-shadow: 0 0 30px -5px hsl(var(--cosmic-cyan) / 0.6); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
