@@ -12,13 +12,13 @@
   - Interactive dashboard with stats and cards
   - Space themed dark user interface
 
-# risk_logic:
+# risk logic:
   high: Hazardous asteroid and distance less than 1000000 km
   medium: Distance less than 3000000 km
   low: All other asteroids
 
 # tech stack:
-  #### frontend:
+   frontend:
     framework: React
     language: TypeScript
     build_tool: Vite
