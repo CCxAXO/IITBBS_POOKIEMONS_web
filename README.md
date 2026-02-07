@@ -1,4 +1,4 @@
-project:
+**project:**
   name: Cosmic Watch
   description: Real time asteroid monitoring and risk analysis platform using NASA data
   purpose: Show near earth objects in a simple and visual way
