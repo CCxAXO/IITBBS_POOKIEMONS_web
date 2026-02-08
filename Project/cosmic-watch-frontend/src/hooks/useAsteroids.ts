@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Asteroid, AsteroidStats } from '@/types/asteroid';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://iitbbs-pookiemons-web.onrender.com';
 
 export const useAsteroids = () => {
   const [asteroids, setAsteroids] = useState<Asteroid[]>([]);
