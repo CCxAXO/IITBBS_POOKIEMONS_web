@@ -82,4 +82,4 @@ setup:
 # author:
   name: Pookiemons
   field: Computer Science AI and ML
-  year: 2026 .
+  year: 2026 
