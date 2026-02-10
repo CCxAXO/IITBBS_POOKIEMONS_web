@@ -15,7 +15,7 @@
 # risk logic:
   high: Hazardous asteroid and distance less than 1000000 km
   medium: Distance less than 3000000 km
-  low: All other asteroids
+  low: All other asteroid
 
 # tech stack:
    frontend:
